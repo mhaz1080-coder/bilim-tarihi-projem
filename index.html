@@ -172,7 +172,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script type="text/babel">
-        const API_KEY = 'AIzaSyACrEqmrFBTk6E90-FhbJAYN6mKfrpRTe8';
+        const API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
         const { useState, useEffect, useMemo, useRef } = React;
 
         // --- Icon Helper ---
@@ -1082,7 +1082,8 @@ FORMAT: Yanıtı her zaman şu JSON formatında döndür: {"text": "teknik_acikl
 
                     <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
                         {/* Period Navigation */}
-                        <div className="flex flex-wrap justify-center gap-4 mb-16">
+                       <div className="flex overflow-x-auto whitespace-nowrap gap-4 mb-16 pb-4 px-4 justify-start md:justify-center no-scrollbar">
+    
                             <button
                                 onClick={() => setActivePeriod('All')}
                                 className={cn(
