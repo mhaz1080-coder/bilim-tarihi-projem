@@ -1081,68 +1081,37 @@ FORMAT: Yanıtı her zaman şu JSON formatında döndür: {"text": "teknik_acikl
                     </nav>
 
                     <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-                     {/* Period Navigation */}
-
+                    {/* Period Navigation */}
 <div className="flex overflow-x-auto whitespace-nowrap gap-4 mb-16 pb-4 px-4 justify-start md:justify-center no-scrollbar">
-
     <button
-
         onClick={() => setActivePeriod('All')}
-
         className={cn(
-
             "shrink-0 px-6 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] border transition-all font-semibold",
-
-            activePeriod === 'All'
-
-                ? "bg-gold text-black border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]"
-
+            activePeriod === 'All' 
+                ? "bg-gold text-black border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]" 
                 : "bg-white/5 border-white/10 text-ink/50 hover:border-white/30"
-
         )}
-
     >
-
         Tümü
-
     </button>
-
-    {PERIODS.map((period) => {
-
+    {PERIODS.map(period => {
         const Icon = getIcon(period.icon);
-
         return (
-
             <button
-
                 key={period.id}
-
                 onClick={() => setActivePeriod(period.id)}
-
                 className={cn(
-
                     "shrink-0 px-6 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] border transition-all flex items-center gap-2 font-semibold",
-
-                    activePeriod === period.id
-
-                        ? "bg-gold text-black border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]"
-
+                    activePeriod === period.id 
+                        ? "bg-gold text-black border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]" 
                         : "bg-white/5 border-white/10 text-ink/50 hover:border-white/30"
-
                 )}
-
             >
-
                 <Icon className="w-3 h-3" />
-
                 {period.label}
-
             </button>
-
         );
-
     })}
-
 </div>
 
                         {/* Hero */}
