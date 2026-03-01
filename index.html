@@ -172,8 +172,11 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script type="text/babel">
-        // Vercel'in bu değeri koduna enjekte etmesi için bu formatı kullanıyoruz:
-const API_KEY = "AIzaSyCfOTkXiwGY93FqZzPtvG1mo5A1iPLDeRE";
+         // Eski tırnak içindeki anahtarı tamamen sil!
+const API_KEY = process.env.REACT_APP_GEMINI_API_KEY; 
+// Eğer üstteki çalışmazsa (düz HTML olduğu için), 
+// Vercel'in bu değişkeni otomatik tanıması için şunu dene:
+// const API_KEY = "REPLACE_WITH_YOUR_VARIABLE_NAME";
         const { useState, useEffect, useMemo, useRef } = React; 
         
 
